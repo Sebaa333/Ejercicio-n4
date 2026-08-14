@@ -1,0 +1,188 @@
+@import url('https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200..1000;1,200..1000&display=swap');
+
+/* COLORES Y ESTILOS GENERALES */
+:root {
+    --primary-color: #002112;
+    --secondary-color: #27AE61;
+    --text-color: white;
+    --accent-color: #84d914;
+    --background-color: #00341d;
+    --background-secondary-color: #121212;
+    --font-family: 'Nunito', sans-serif;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    background-color: var(--background-color);
+    color: var(--text-color);
+    font-family: var(--font-family);
+}
+
+.logo {
+    width: 50px;
+    height: 50px;
+}
+
+h1 span,
+h3 span {
+    color: var(--accent-color);
+}
+
+/* HEADER Y NAVEGACION */
+.header {
+    display: flex;
+    align-items: center;
+    padding: 15px;
+    background-color: var(--primary-color);
+}
+
+.nav {
+    margin-left: auto;
+}
+
+.nav-list {
+    display: flex;
+    gap: 20px;
+    list-style: none;
+}
+
+.nav a {
+    color: var(--text-color);
+    text-decoration: none;
+    transition: color 0.3s;
+}
+
+.nav a:hover {
+    color: var(--accent-color);
+}
+
+/* SECCION HERO: VIDEO Y TEXTO SUPERPUESTO */
+#hero {
+    position: relative;
+    height: 500px;
+}
+
+.hero-video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.banner-content {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 80%;
+    padding: 20px;
+    text-align: center;
+    background-color: rgba(0, 0, 0, 0.65);
+}
+
+/* SECCION DE INFORMACION */
+.section-wrapper {
+    max-width: 1200px;
+    margin: auto;
+    padding: 40px 20px;
+}
+
+#info .section-wrapper {
+    display: flex;
+    align-items: center;
+    gap: 30px;
+}
+
+.info-text,
+.info-image {
+    width: 50%;
+}
+
+/* SECCION DE PRODUCTOS */
+#products {
+    padding: 40px 20px;
+    background-color: var(--background-secondary-color);
+}
+
+.products-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+}
+
+.product-card {
+    width: 300px;
+    padding: 10px;
+    border: 2px solid var(--secondary-color);
+}
+
+.product-image {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+}
+
+.product-card h3 {
+    color: var(--accent-color);
+}
+
+/* SECCION DE BENEFICIOS Y TABLA */
+.benefits-table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.benefits-table th,
+.benefits-table td {
+    padding: 10px;
+    border: 1px solid var(--secondary-color);
+    text-align: left;
+}
+
+.benefits-table th {
+    color: var(--text-color);
+    background-color: var(--secondary-color);
+}
+
+.benefits-table tbody tr:nth-child(even) {
+    background-color: rgba(39, 174, 97, 0.1);
+}
+
+/* FOOTER */
+.footer {
+    display: flex;
+    gap: 30px;
+    padding: 30px;
+    background-color: var(--background-secondary-color);
+}
+
+.footer section {
+    width: 50%;
+}
+
+/* VERSION PARA CELULARES */
+@media (max-width: 520px) {
+    .header,
+    #info .section-wrapper,
+    .footer {
+        flex-direction: column;
+    }
+
+    .nav {
+        margin-left: 0;
+    }
+
+    .nav-list {
+        padding: 0;
+    }
+
+    .info-text,
+    .info-image,
+    .footer section {
+        width: 100%;
+    }
+}
